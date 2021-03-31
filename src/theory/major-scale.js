@@ -17,26 +17,17 @@ const BREAKPOINTS = [3, 6];
 
 function getMajorScale(unison) {
   const index = CHROMATIC_SCALE.findIndex((note) => note === unison);
-  const scale = constructScale(index);
-  console.log("scale:", scale);
+  const chromaticScaleReordered = reorderScale(index);
+  console.log("scale:", chromaticScaleReordered);
   return unison;
 }
 
-function constructScale(index) {
-  console.log("constructScale", index);
-  const scaleMapped = CHROMATIC_SCALE.map((element, index) =>
-    transformNote(element, index)
-  );
-  const scaleSort = console.log(scaleMapped);
+function reorderScale(index) {
+  const start = CHROMATIC_SCALE.slice(0, index);
+  const end = CHROMATIC_SCALE.slice(index);
+  return end.concat(start);
 }
 
-function transformNote(element, index) {
-  return {
-    index,
-    value: element
-  };
-}
-
-const CDur = getMajorScale("D");
+const DDur = getMajorScale("D");
 
 // console.log("CDur:", CDur); // ['C', 'D', 'E', 'F', 'G', 'A', 'H']
