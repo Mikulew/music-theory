@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import MusicTheory from './components/MusicTheory.vue'
+import MusicTheory from './views/MusicTheory.vue'
 
 export default {
   name: 'App',
