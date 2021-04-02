@@ -8,9 +8,9 @@
       />
       <m-select
         class="select"
-        label="Music notation"
-        :options="notationOptions"
-        @input="changeNotation"
+        label="Naming convention"
+        :options="conventionOptions"
+        @input="changeConvention"
       />
     </div>
     <div class="scale">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { CHROMATIC_SCALE, NOTATION_OPTIONS, SCALES_OPTIONS } from '../consts';
+import { CHROMATIC_SCALE, CONVENTION_OPTIONS, SCALES_OPTIONS } from '../consts';
 import MSelect from '../components/m-select'
 
 export default {
@@ -28,21 +28,21 @@ export default {
 
   data() {
     return {
-      notation: NOTATION_OPTIONS[0],
-      notationOptions: NOTATION_OPTIONS,
+      currentConvention: CONVENTION_OPTIONS[0],
+      conventionOptions: CONVENTION_OPTIONS,
       scaleOptions: SCALES_OPTIONS,
     };
   },
 
   computed: {
     scale() {
-      return CHROMATIC_SCALE[this.notation.value];
+      return CHROMATIC_SCALE[this.currentConvention.value];
     }
   },
 
   methods: {
-    changeNotation(value) {
-      this.notation = value;
+    changeConvention(value) {
+      this.currentConvention = value;
     }
   },
 
