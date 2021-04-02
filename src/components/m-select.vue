@@ -22,6 +22,8 @@
 
 <script>
 export default {
+  name: 'MSelect',
+
   props: {
     label: {
       type: String,
@@ -50,10 +52,6 @@ export default {
       this.open = false;
       this.$emit('input', option)
     }
-  },
-
-  mounted() {
-    this.$emit("input", this.selected);
   },
 }
 </script>

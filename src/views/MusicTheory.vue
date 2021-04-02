@@ -4,15 +4,16 @@
       <m-select
         class="select"
         label="Scales"
-        :options="sclaeOptions"
+        :options="scaleOptions"
       />
       <m-select
         class="select"
         label="Music notation"
         :options="notationOptions"
+        @input="changeNotation"
       />
     </div>
-    <div>
+    <div class="scale">
       {{ scale }}
     </div>
   </div>
@@ -29,13 +30,19 @@ export default {
     return {
       notation: NOTATION_OPTIONS[0],
       notationOptions: NOTATION_OPTIONS,
-      sclaeOptions: SCALES_OPTIONS,
+      scaleOptions: SCALES_OPTIONS,
     };
   },
 
   computed: {
     scale() {
       return CHROMATIC_SCALE[this.notation.value];
+    }
+  },
+
+  methods: {
+    changeNotation(value) {
+      this.notation = value;
     }
   },
 
@@ -49,7 +56,7 @@ export default {
 .options {
   display: flex;
 }
-.select {
+.select, .scale {
   margin: 10px;
 }
 </style>
