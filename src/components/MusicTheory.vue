@@ -14,16 +14,27 @@
       </select>
     </div>
     <div>
-      C D E F G A H C
+      {{ scale }}
     </div>
   </div>
 </template>
 
 <script>
+import { CHROMATIC_SCALE, LOCAL_NOTATION } from '../consts';
+
 export default {
   name: 'MusicTheory',
-  props: {
-    msg: String
+
+  data() {
+    return {
+      notation: LOCAL_NOTATION.EU
+    };
+  },
+
+  computed: {
+    scale() {
+      return CHROMATIC_SCALE[this.notation];
+    }
   }
 }
 </script>

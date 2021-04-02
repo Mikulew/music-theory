@@ -1,5 +1,5 @@
 <template>
-  <MusicTheory msg="Music Theory" />
+  <MusicTheory />
 </template>
 
 <script>
