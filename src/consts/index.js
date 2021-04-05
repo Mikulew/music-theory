@@ -17,16 +17,16 @@ export const CONVENTION_OPTIONS = [
   },
   {
     label: 'Neo-Latin',
-    value: NAMING_CONVENTION.NL
+    value: NAMING_CONVENTION.NL,
   },
   {
     label: 'Indian',
-    value: NAMING_CONVENTION.IN
+    value: NAMING_CONVENTION.IN,
   },
   {
     label: 'Japan',
-    value: NAMING_CONVENTION.JP
-  }
+    value: NAMING_CONVENTION.JP,
+  },
 ];
 
 export const CHROMATIC_SCALE = {
@@ -34,7 +34,7 @@ export const CHROMATIC_SCALE = {
   [NAMING_CONVENTION.US]: ["C", "C#/D♭", "D", "D#/E♭", "E", "F", "F#/G♭", "G", "G#/A♭", "A", "A#/B♭", "B"],
   [NAMING_CONVENTION.NL]: ['do', 'do♯/re♭', 're', 're#/mi♭', 'mi', 'fa', 'fa#/sol♭', 'sol', 'sol#/la♭', 'la', 'la#/si♭', 'si', 'si#/do♭', 'do'],
   [NAMING_CONVENTION.IN]: ['সা', 'ঋ', 'রে', 'জ্ঞ', 'গ', 'ম', 'হ্ম', 'প', 'দ', 'ধ', 'ণ', 'নি'],
-  [NAMING_CONVENTION.JP]: ['ハ', '嬰ハ)/変ニ', 'ニ', '嬰ニ/変ホ', 'ホ', 'ヘ', '嬰へ/変ト', 'ト', '嬰ト/変イ', 'イ', '嬰イ/変ロ', 'ロ']
+  [NAMING_CONVENTION.JP]: ['ハ', '嬰ハ)/変ニ', 'ニ', '嬰ニ/変ホ', 'ホ', 'ヘ', '嬰へ/変ト', 'ト', '嬰ト/変イ', 'イ', '嬰イ/変ロ', 'ロ'],
 }
 
 export const TYPE_OF_SCALES = {
@@ -42,7 +42,7 @@ export const TYPE_OF_SCALES = {
   MAJOR: 'MAJOR_SCALE',
   MINOR: 'MINOR_SCALE',
   PASSAGE: 'CHORD_PASSAGE',
-  PROGRESSION: 'CHORD_PROGRESSION'
+  PROGRESSION: 'CHORD_PROGRESSION',
 };
 
 export const SCALES_OPTIONS = [
