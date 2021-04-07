@@ -10,13 +10,13 @@
         class="select"
         label="Naming convention"
         :options="conventionOptions"
-        @input="changeConvention"
+        @input="value => currentConvention = value"
       />
       <m-select
         class="select"
         label="Repeat"
         :options="repeatOptions"
-        @input="upateScale()"
+        @input="value => repeat = value"
       />
     </div>
     <div class="scale">
@@ -37,23 +37,14 @@ export default {
       currentConvention: CONVENTION_OPTIONS[0],
       conventionOptions: CONVENTION_OPTIONS,
       scaleOptions: SCALES_OPTIONS,
-      repeatOptions: [1, 2, 3, 4, 5].map(element => ({ label: `${element}`, value: element}))
+      repeatOptions: [1, 2, 3, 4, 5].map(element => ({ label: `${element}`, value: element})),
+      repeat: { value: 1 },
     };
   },
 
   computed: {
     scale() {
-      return CHROMATIC_SCALE[this.currentConvention.value];
-    },
-  },
-
-  methods: {
-    changeConvention(value) {
-      this.currentConvention = value;
-    },
-
-    upateScale() {
-      console.log('updateScale');
+      return CHROMATIC_SCALE[this.currentConvention.value].join(", ").repeat(this.repeat.value);
     },
   },
 
