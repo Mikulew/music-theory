@@ -67,3 +67,12 @@ export const SCALES_OPTIONS = [
     value: CHROMATIC_SCALE.PROGRESSION,
   },
 ];
+
+export const CHROMATIC_OPTIONS = nammingConvetion => {
+  return CHROMATIC_SCALE[nammingConvetion].map((element, index) => {
+    return {
+      label: element,
+      value: index
+    }
+  })
+} 

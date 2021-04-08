@@ -3,6 +3,12 @@
     <div class="options">
       <m-select
         class="select"
+        label="Notes"
+        :options="chromaticOptions"
+        @input="value => currentNote = value"
+      />
+      <m-select
+        class="select"
         label="Scales"
         :options="scaleOptions"
       />
@@ -26,7 +32,7 @@
 </template>
 
 <script>
-import { CHROMATIC_SCALE, CONVENTION_OPTIONS, SCALES_OPTIONS } from '../consts';
+import { CHROMATIC_SCALE, CHROMATIC_OPTIONS, CONVENTION_OPTIONS, SCALES_OPTIONS } from '../consts';
 import MSelect from '../components/m-select'
 
 export default {
@@ -34,11 +40,12 @@ export default {
 
   data() {
     return {
+      currentNote: CHROMATIC_OPTIONS[0],
       currentConvention: CONVENTION_OPTIONS[0],
       conventionOptions: CONVENTION_OPTIONS,
       scaleOptions: SCALES_OPTIONS,
       repeatOptions: [1, 2, 3, 4, 5].map(element => ({ label: `${element}`, value: element})),
-      repeat: { value: 1 },
+      repeat: { value: 1 }
     };
   },
 
@@ -46,6 +53,10 @@ export default {
     scale() {
       return CHROMATIC_SCALE[this.currentConvention.value].join(", ").repeat(this.repeat.value);
     },
+
+    chromaticOptions () {
+      return CHROMATIC_OPTIONS(this.currentConvention.value)
+    }
   },
 
   components: {
