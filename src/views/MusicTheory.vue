@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { inject, computed } from 'vue';
 import { CHROMATIC_SCALE, CHROMATIC_OPTIONS, CONVENTION_OPTIONS, SCALES_OPTIONS } from '../consts';
 import MSelect from '../components/m-select'
 
@@ -41,11 +42,27 @@ export default {
   data() {
     return {
       currentNote: CHROMATIC_OPTIONS[0],
-      currentConvention: CONVENTION_OPTIONS[0],
       conventionOptions: CONVENTION_OPTIONS,
       scaleOptions: SCALES_OPTIONS,
       repeatOptions: [1, 2, 3, 4, 5].map(element => ({ label: `${element}`, value: element})),
       repeat: { value: 1 }
+    };
+  },
+
+  setup() {
+    const global = inject('global')
+
+    const currentConvention = computed({
+      get() {
+        return global.state.convention;
+      },
+      set(value) {
+        return global.methods.selectConvention(value);
+      }
+    });
+
+    return {
+      currentConvention
     };
   },
 
