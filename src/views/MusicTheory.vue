@@ -32,11 +32,13 @@
 </template>
 
 <script>
+
 import { inject, computed } from 'vue';
 import { CHROMATIC_SCALE, CHROMATIC_OPTIONS, CONVENTION_OPTIONS, SCALES_OPTIONS } from '../consts';
-import MSelect from '../components/m-select'
+import MSelect from '../components/m-select';
 
 export default {
+
   name: 'MusicTheory',
 
   data() {
@@ -45,12 +47,12 @@ export default {
       conventionOptions: CONVENTION_OPTIONS,
       scaleOptions: SCALES_OPTIONS,
       repeatOptions: [1, 2, 3, 4, 5].map(element => ({ label: `${element}`, value: element})),
-      repeat: { value: 1 }
+      repeat: { value: 1 },
     };
   },
 
   setup() {
-    const global = inject('global')
+    const global = inject('global');
 
     const currentConvention = computed({
       get() {
@@ -58,11 +60,11 @@ export default {
       },
       set(value) {
         return global.methods.selectConvention(value);
-      }
+      },
     });
 
     return {
-      currentConvention
+      currentConvention,
     };
   },
 
@@ -72,21 +74,25 @@ export default {
     },
 
     chromaticOptions () {
-      return CHROMATIC_OPTIONS(this.currentConvention.value)
-    }
+      return CHROMATIC_OPTIONS(this.currentConvention.value);
+    },
   },
 
   components: {
     MSelect
-  }
-}
+  },
+
+};
+
 </script>
 
 <style scoped>
+
 .options {
   display: flex;
 }
 .select, .scale {
   margin: 10px;
 }
+
 </style>

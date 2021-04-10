@@ -72,7 +72,7 @@ export const CHROMATIC_OPTIONS = nammingConvetion => {
   return CHROMATIC_SCALE[nammingConvetion].map((element, index) => {
     return {
       label: element,
-      value: index
-    }
-  })
-} 
+      value: index,
+    };
+  });
+};
