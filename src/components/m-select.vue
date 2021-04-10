@@ -21,7 +21,9 @@
 </template>
 
 <script>
+
 export default {
+
   name: 'MSelect',
 
   props: {
@@ -37,9 +39,20 @@ export default {
 
   data() {
     return {
-      selected: this.options[0].label,
       open: false,
+      initialOption: this.options[0].label,
     };
+  },
+
+  computed: {
+    selected: {
+      get() {
+        return this.initialOption;
+      },
+      set(value) {
+        return this.initialOption = value.label;
+      },
+    },
   },
 
   methods: {
@@ -48,12 +61,14 @@ export default {
     },
 
     selectOption(option) {
-      this.selected = option.label;
+      this.selected = option;
       this.open = false;
       this.$emit('input', option)
     }
   },
-}
+
+};
+
 </script>
 
 <style scoped>
@@ -132,4 +147,5 @@ export default {
 .select-hide {
   display: none;
 }
+
 </style>
