@@ -48,23 +48,23 @@ export const TYPE_OF_SCALES = {
 export const SCALES_OPTIONS = [
   {
     label: 'Chromatic scale',
-    value: TYPE_OF_SCALES.CHROMATIC_SCALE,
+    value: TYPE_OF_SCALES.CHROMATIC,
   },
   {
     label: 'Major',
-    value: CHROMATIC_SCALE.MAJOR,
+    value: TYPE_OF_SCALES.MAJOR,
   },
   {
     label: 'Minor',
-    value: CHROMATIC_SCALE.MINOR,
+    value: TYPE_OF_SCALES.MINOR,
   },
   {
     label: 'Passage',
-    value: CHROMATIC_SCALE.PASSAGE,
+    value: TYPE_OF_SCALES.PASSAGE,
   },
   {
     label: 'Progression',
-    value: CHROMATIC_SCALE.PROGRESSION,
+    value: TYPE_OF_SCALES.PROGRESSION,
   },
 ];
 
