@@ -27,8 +27,7 @@
       />
     </div>
     <div class="scale">
-      <h3>{{ currentFormat.label }}</h3>
-      {{ scale }}
+      <h3>Scale: </h3>
     </div>
   </div>
 </template>
@@ -37,7 +36,6 @@
 
 import { inject, computed } from 'vue';
 import {
-  CHROMATIC_SCALE,
   CHROMATIC_OPTIONS,
   CONVENTION_OPTIONS,
   SCALES_OPTIONS,
@@ -96,10 +94,6 @@ export default {
   },
 
   computed: {
-    scale() {
-      const scale = CHROMATIC_SCALE[this.currentConvention.value].join(", ").repeat(this.repeat.value);
-      return this.formatScaleByNote(scale);
-    },
 
     chromaticOptions() {
       return CHROMATIC_OPTIONS(this.currentConvention.value);
