@@ -9,7 +9,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "core-js": "^3.11.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -19,7 +19,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint-plugin-vue": "^7.9.0",
     "rimraf": "^3.0.2"
   },
   "eslintConfig": {
